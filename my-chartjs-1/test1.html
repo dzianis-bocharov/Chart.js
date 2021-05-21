@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: grey;
+                color: white;
+            }
+            div#chart-container {
+              background-color: white;
+            }
+        </style>
+
+        <style>
+            canvas {
+            height: 100% !important;
+            }
+        </style>
+
+        <script src='jQuery.js'></script>
+        <script src='chart.js'></script>
+        <script src='moment.min.js'></script>
+        <script src='chartjs-adapter-moment.min.js'></script>
+        
+
+        <script>
+$(document).ready(function() {
+
+var chartDatasets = [];
+
+chartDatasets.push({
+  "label": "Estimated kg DM Available",
+  "data": [{
+      "x": "2021-05-13T11:41:48.338Z",
+      "y": 10944.050000000003,
+      "paddockLabel": "36"
+    },
+    {
+      "x": "2021-05-13T11:41:48.338Z",
+      "y": 10944.050000000003,
+      "paddockLabel": "36"
+    },
+    {
+      "x": "2021-05-14T11:41:48.338Z",
+      "y": 10729.350000000002,
+      "paddockLabel": "25"
+    },
+    {
+      "x": "2021-05-14T11:41:48.338Z",
+      "y": 10729.350000000002,
+      "paddockLabel": "25"
+    },
+    {
+      "x": "2021-05-15T11:41:48.338Z",
+      "y": 20066.4,
+      "paddockLabel": "39"
+    },
+    {
+      "x": "2021-05-15T11:41:48.338Z",
+      "y": 19710,
+      "paddockLabel": "28"
+    },
+    {
+      "x": "2021-05-16T11:41:48.338Z",
+      "y": 10080,
+      "paddockLabel": "2"
+    },
+    {
+      "x": "2021-05-16T11:41:48.338Z",
+      "y": 10080,
+      "paddockLabel": "2"
+    },
+    {
+      "x": "2021-05-17T11:41:48.338Z",
+      "y": 9861.599999999999,
+      "paddockLabel": "13"
+    },
+    {
+      "x": "2021-05-17T11:41:48.338Z",
+      "y": 9861.599999999999,
+      "paddockLabel": "13"
+    },
+    {
+      "x": "2021-05-18T11:41:48.338Z",
+      "y": 18227,
+      "paddockLabel": "31"
+    },
+    {
+      "x": "2021-05-18T11:41:48.338Z",
+      "y": 10494.150000000001,
+      "paddockLabel": "4"
+    },
+    {
+      "x": "2021-05-19T11:41:48.338Z",
+      "y": 10494.150000000001,
+      "paddockLabel": "4"
+    },
+    {
+      "x": "2021-05-19T11:41:48.338Z",
+      "y": 15582,
+      "paddockLabel": "22"
+    },
+    {
+      "x": "2021-05-20T11:41:48.338Z",
+      "y": 15215.4,
+      "paddockLabel": "32"
+    },
+    {
+      "x": "2021-05-20T11:41:48.338Z",
+      "y": 16124,
+      "paddockLabel": "24"
+    },
+    {
+      "x": "2021-05-21T11:41:48.338Z",
+      "y": 14290.5,
+      "paddockLabel": "37"
+    },
+    {
+      "x": "2021-05-21T11:41:48.338Z",
+      "y": 15874.599999999999,
+      "paddockLabel": "10"
+    },
+    {
+      "x": "2021-05-22T11:41:48.338Z",
+      "y": 14063.7,
+      "paddockLabel": "6"
+    },
+    {
+      "x": "2021-05-22T11:41:48.338Z",
+      "y": 13639.100000000002,
+      "paddockLabel": "27"
+    },
+    {
+      "x": "2021-05-23T11:41:48.338Z",
+      "y": 12549.6,
+      "paddockLabel": "23"
+    },
+    {
+      "x": "2021-05-23T11:41:48.338Z",
+      "y": 11861.399999999998,
+      "paddockLabel": "33"
+    },
+    {
+      "x": "2021-05-24T11:41:48.338Z",
+      "y": 11924.600000000002,
+      "paddockLabel": "30"
+    },
+    {
+      "x": "2021-05-24T11:41:48.338Z",
+      "y": 11466.8,
+      "paddockLabel": "34"
+    },
+    {
+      "x": "2021-05-25T11:41:48.338Z",
+      "y": 12475,
+      "paddockLabel": "26"
+    },
+    {
+      "x": "2021-05-25T11:41:48.338Z",
+      "y": 11023.8,
+      "paddockLabel": "17"
+    },
+    {
+      "x": "2021-05-26T11:41:48.338Z",
+      "y": 10169.7,
+      "paddockLabel": "38"
+    },
+    {
+      "x": "2021-05-26T11:41:48.338Z",
+      "y": 8731.8,
+      "paddockLabel": "7"
+    },
+    {
+      "x": "2021-05-27T11:41:48.338Z",
+      "y": 7597.299999999999,
+      "paddockLabel": "21"
+    },
+    {
+      "x": "2021-05-27T11:41:48.338Z",
+      "y": 7062.000000000002,
+      "paddockLabel": "35"
+    },
+    {
+      "x": "2021-05-28T11:41:48.338Z",
+      "y": 6572.799999999999,
+      "paddockLabel": "12"
+    },
+    {
+      "x": "2021-05-28T11:41:48.338Z",
+      "y": 7018,
+      "paddockLabel": "8"
+    },
+    {
+      "x": "2021-05-29T11:41:48.338Z",
+      "y": 6138,
+      "paddockLabel": "18"
+    },
+    {
+      "x": "2021-05-29T11:41:48.338Z",
+      "y": 5439.100000000002,
+      "paddockLabel": "3"
+    }
+  ],
+  "backgroundColor": "#1B6F1B",
+  "borderWidth": 1,
+  "categoryPercentage": 1,
+  "barPercentage": 1
+})
+
+chartDatasets.push({
+  "label": "Estimated kg DM Grown",
+  "data": [{
+      "x": "2021-05-13T11:41:48.338Z",
+      "y": 0
+    },
+    {
+      "x": "2021-05-13T11:41:48.338Z",
+      "y": 0
+    },
+    {
+      "x": "2021-05-14T11:41:48.338Z",
+      "y": 169.5
+    },
+    {
+      "x": "2021-05-14T11:41:48.338Z",
+      "y": 169.5
+    },
+    {
+      "x": "2021-05-15T11:41:48.338Z",
+      "y": 648
+    },
+    {
+      "x": "2021-05-15T11:41:48.338Z",
+      "y": 648
+    },
+    {
+      "x": "2021-05-16T11:41:48.338Z",
+      "y": 504
+    },
+    {
+      "x": "2021-05-16T11:41:48.338Z",
+      "y": 504
+    },
+    {
+      "x": "2021-05-17T11:41:48.338Z",
+      "y": 672
+    },
+    {
+      "x": "2021-05-17T11:41:48.338Z",
+      "y": 672
+    },
+    {
+      "x": "2021-05-18T11:41:48.338Z",
+      "y": 1650
+    },
+    {
+      "x": "2021-05-18T11:41:48.338Z",
+      "y": 967.5
+    },
+    {
+      "x": "2021-05-19T11:41:48.338Z",
+      "y": 967.5
+    },
+    {
+      "x": "2021-05-19T11:41:48.338Z",
+      "y": 1908
+    },
+    {
+      "x": "2021-05-20T11:41:48.338Z",
+      "y": 2246.9999999999945
+    },
+    {
+      "x": "2021-05-20T11:41:48.338Z",
+      "y": 2436
+    },
+    {
+      "x": "2021-05-21T11:41:48.338Z",
+      "y": 2520
+    },
+    {
+      "x": "2021-05-21T11:41:48.338Z",
+      "y": 2856
+    },
+    {
+      "x": "2021-05-22T11:41:48.338Z",
+      "y": 2996.9999999999964
+    },
+    {
+      "x": "2021-05-22T11:41:48.338Z",
+      "y": 3050.9999999999964
+    },
+    {
+      "x": "2021-05-23T11:41:48.338Z",
+      "y": 3240
+    },
+    {
+      "x": "2021-05-23T11:41:48.338Z",
+      "y": 3180
+    },
+    {
+      "x": "2021-05-24T11:41:48.338Z",
+      "y": 3597
+    },
+    {
+      "x": "2021-05-24T11:41:48.338Z",
+      "y": 3597
+    },
+    {
+      "x": "2021-05-25T11:41:48.338Z",
+      "y": 4500
+    },
+    {
+      "x": "2021-05-25T11:41:48.338Z",
+      "y": 4104
+    },
+    {
+      "x": "2021-05-26T11:41:48.338Z",
+      "y": 4251
+    },
+    {
+      "x": "2021-05-26T11:41:48.338Z",
+      "y": 3861
+    },
+    {
+      "x": "2021-05-27T11:41:48.338Z",
+      "y": 4578
+    },
+    {
+      "x": "2021-05-27T11:41:48.338Z",
+      "y": 4493.999999999996
+    },
+    {
+      "x": "2021-05-28T11:41:48.338Z",
+      "y": 4680
+    },
+    {
+      "x": "2021-05-28T11:41:48.338Z",
+      "y": 5220
+    },
+    {
+      "x": "2021-05-29T11:41:48.338Z",
+      "y": 5280
+    },
+    {
+      "x": "2021-05-29T11:41:48.338Z",
+      "y": 5232
+    }
+  ],
+  "backgroundColor": "#90EE90",
+  "borderWidth": 1,
+  "categoryPercentage": 1,
+  "barPercentage": 1
+})
+
+var ctx = $('#mychart');
+
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    datasets: chartDatasets
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        stacked: true,
+        offset: true,
+        type: 'timeseries',
+        time: {
+          parser: 'YYYY-MM-DD',
+          tooltipFormat: 'll',
+          unit: 'day',
+          displayFormats: {
+            day: 'MMM D'
+          },
+        },
+        ticks: {
+          source: 'data',
+          align: 'center',
+        },
+        grid: {
+          drawOnChartArea: false
+        },
+      },
+      y: {
+        stacked: true,
+        type: 'linear',
+        ticks: {
+          beginAtZero: true
+        },
+        title: {
+          display: true,
+          text: 'kg Dry Matter / ha',
+          font: {
+            weight: "bold"
+          }
+        }
+      }
+    }
+  },
+  plugins: [{
+    afterDatasetsDraw: function(chart, easing) {
+      // To only draw at the end of animation, check for easing === 1
+      var ctx = chart.ctx;
+      var meta = chart.getDatasetMeta(0);
+      if (!meta.hidden) {
+        meta.data.forEach(function(element, index) {
+
+          ctx.fillStyle = 'rgb(0, 0, 0)';
+          ctx.font = ctx.font.replace(/\d+px/, "10px"); 
+          ctx.font = ctx.font += " bold";
+          var height = chart.boxes[3].bottom;
+          var dataString = element.$context.raw.paddockLabel.toString();
+
+          // Make sure alignment settings are correct
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.z - index
+
+          var padding = 5;
+          var position = element.tooltipPosition();
+          ctx.fillText(dataString, position.x, (height - (height / position.y) / 2) - padding);
+        });
+      }
+    }
+  }]
+});
+});            
+        </script>
+
+    </head>
+    <body>
+        <div>
+            test
+        </div>
+
+        <div id="chart-container" class="box-shadow-bottom col-12 px-0 bg-white" style="flex: 0 0 30%; overflow: hidden;">
+            <div style="overflow: hidden;">
+              <canvas id="mychart"></canvas>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+
+
+
+
