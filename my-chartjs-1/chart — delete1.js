@@ -6225,7 +6225,6 @@ const getChart = (key) => {
   const canvas = getCanvas(key);
   return Object.values(instances).filter((c) => c.canvas === canvas).pop();
 };
-//*************************
 class Chart {
   constructor(item, config) {
     const me = this;
@@ -6938,7 +6937,6 @@ class Chart {
     return changed;
   }
 }
-//*************************
 const invalidatePlugins = () => each(Chart.instances, (chart) => chart._plugins.invalidate());
 const enumerable = true;
 Object.defineProperties(Chart, {
