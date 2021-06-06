@@ -7602,7 +7602,7 @@ class BarController extends DatasetController {
       size
     };
   }
-  draw() {
+  /*закладка*/draw() {
     const me = this;
     const chart = me.chart;
     const meta = me._cachedMeta;
@@ -8065,7 +8065,7 @@ DoughnutController.overrides = {
   }
 };
 
-class LineController extends DatasetController {
+/*закладка*/class LineController extends DatasetController {
   initialize() {
     this.enableOptionSharing = true;
     super.initialize();
